@@ -50,6 +50,11 @@ h2.sh{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;letter-spacing:-.02em
 .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;position:relative}
 .shot img{width:100%;height:210px;object-fit:cover;display:block}
 .shot .lbl{position:absolute;left:12px;bottom:12px;background:rgba(11,12,16,.9);color:#fff;font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:100px;letter-spacing:.03em}
+.hero-img img,.shot img{cursor:zoom-in}.shot{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,10,14,.93);display:none;align-items:center;justify-content:center;padding:28px}
+.lb.open{display:flex}
+.lb img{max-width:94%;max-height:92%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);cursor:default}
+.lb .x{position:absolute;top:18px;right:28px;color:#fff;font-size:2.6rem;font-weight:300;cursor:pointer;line-height:1;font-family:Arial,sans-serif}
 
 .feat{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 34px}
 .feat ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
@@ -85,15 +90,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 46px;text-align:center;co
 </section>
 
 <section class="wrap sec">
-  <span class="eyebrow">Full specifications</span>
-  <h2 class="sh">Every spec, in one place</h2>
-  <div class="specs"><div class="row"><span>Drink capacity</span><b>252 drinks</b></div><div class="row"><span>Adjustable shelves</span><b>6</b></div><div class="row"><span>Product pushers</span><b>6 (3 drink + 3 snack)</b></div><div class="row"><span>Dimensions (W×D×H)</span><b>22.8" × 26" × 76"</b></div><div class="row"><span>Weight</span><b>189.6 lbs</b></div><div class="row"><span>AI cameras</span><b>2× anti-fog · 99% accuracy</b></div><div class="row"><span>Detection</span><b>On-device AI · detection in seconds</b></div><div class="row"><span>Temperature range</span><b>32°–50° F</b></div><div class="row"><span>Payment</span><b>Tap card or phone · Apple Pay &amp; Google Pay</b></div><div class="row"><span>Connectivity</span><b>SIM included (Wi-Fi optional)</b></div><div class="row"><span>Security</span><b>Top-locking + anti-theft steel bar</b></div><div class="row"><span>Power</span><b>Standard US outlet · 2.0 kWh/24hr</b></div></div>
-</section>
-
-<section class="wrap sec">
   <span class="eyebrow">See it in your space</span>
   <h2 class="sh">The GrabnGo Mini in the real world</h2>
   <div class="gal"><div class="shot"><img src="assets/settings/mini-hotel.jpg" alt="GrabnGo Mini in a hotel"><span class="lbl">Hotel</span></div><div class="shot"><img src="assets/settings/mini-office.jpg" alt="GrabnGo Mini in a office"><span class="lbl">Office</span></div><div class="shot"><img src="assets/settings/mini-gym.jpg" alt="GrabnGo Mini in a gym"><span class="lbl">Gym</span></div><div class="shot"><img src="assets/settings/mini-warehouse.jpg" alt="GrabnGo Mini in a warehouse"><span class="lbl">Warehouse</span></div><div class="shot"><img src="assets/settings/mini-school.jpg" alt="GrabnGo Mini in a school"><span class="lbl">School</span></div></div>
+</section>
+
+<section class="wrap sec">
+  <span class="eyebrow">Full specifications</span>
+  <h2 class="sh">Every spec, in one place</h2>
+  <div class="specs"><div class="row"><span>Drink capacity</span><b>252 drinks</b></div><div class="row"><span>Adjustable shelves</span><b>6</b></div><div class="row"><span>Product pushers</span><b>6 (3 drink + 3 snack)</b></div><div class="row"><span>Dimensions (W×D×H)</span><b>22.8" × 26" × 76"</b></div><div class="row"><span>Weight</span><b>189.6 lbs</b></div><div class="row"><span>AI cameras</span><b>2× anti-fog · 99% accuracy</b></div><div class="row"><span>Detection</span><b>On-device AI · detection in seconds</b></div><div class="row"><span>Temperature range</span><b>32°–50° F</b></div><div class="row"><span>Payment</span><b>Tap card or phone · Apple Pay &amp; Google Pay</b></div><div class="row"><span>Connectivity</span><b>SIM included (Wi-Fi optional)</b></div><div class="row"><span>Security</span><b>Top-locking + anti-theft steel bar</b></div><div class="row"><span>Power</span><b>Standard US outlet · 2.0 kWh/24hr</b></div></div>
 </section>
 
 <section class="wrap sec">
@@ -117,4 +122,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 46px;text-align:center;co
 </section>
 
 <footer>© 2026 GrabnGo Supply Co. · AI-Powered Smart Vending · Southern California · grabngosupply.com</footer>
+<div class="lb" id="lb"><span class="x">&times;</span><img alt="Expanded view"></div>
+<script>(function(){var lb=document.getElementById("lb"),g=lb.querySelector("img");document.querySelectorAll(".hero-img img, .shot img").forEach(function(im){im.addEventListener("click",function(){g.src=im.src;lb.classList.add("open");});});function c(){lb.classList.remove("open");g.src="";}lb.addEventListener("click",function(e){if(e.target!==g)c();});document.addEventListener("keydown",function(e){if(e.key==="Escape")c();});})();</script>
 </body></html>

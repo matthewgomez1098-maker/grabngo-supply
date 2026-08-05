@@ -274,6 +274,25 @@
   .bene h3{font-size:1.22rem;margin-bottom:10px}
   .bene p{font-size:.96rem;color:var(--muted)}
 
+  /* ---------- Machines lineup ---------- */
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .mcard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    background:linear-gradient(160deg,var(--panel),rgba(0,0,0,.02));transition:transform .3s,border-color .3s,box-shadow .3s}
+  .mcard:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:0 22px 50px rgba(0,0,0,.12)}
+  .mcard .mimg{background:#fff;padding:22px 22px 6px;display:flex;justify-content:center;align-items:flex-end;height:300px}
+  .mcard .mimg img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 12px 20px rgba(0,0,0,.14))}
+  .mcard .mbody{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .msize{display:inline-block;align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:#fff;background:var(--accent);padding:5px 11px;border-radius:100px;margin-bottom:12px}
+  .mcard h3{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:2px}
+  .mcard h3 b{color:var(--accent-2)}
+  .mtag{font-size:.9rem;font-weight:700;color:var(--muted);margin-bottom:16px}
+  .mspecs{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:auto}
+  .mspecs li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:.9rem}
+  .mspecs li span{color:var(--muted)}
+  .mspecs li b{color:var(--txt);font-weight:700;text-align:right}
+  .mnote{text-align:center;color:var(--muted);font-size:.95rem;margin-top:26px}
+
   /* ---------- Who it's for ---------- */
   .venues{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
   .venue{padding:26px 18px;text-align:center;border:1px solid var(--line);border-radius:var(--radius);
@@ -358,6 +377,7 @@
     .steps{grid-template-columns:repeat(2,1fr)}
     .split{grid-template-columns:1fr;gap:40px}
     .bene-grid{grid-template-columns:repeat(2,1fr)}
+    .mgrid{grid-template-columns:repeat(2,1fr)}
     .venues{grid-template-columns:repeat(3,1fr)}
     .stats-band{grid-template-columns:repeat(2,1fr);gap:36px 24px}
     .host{grid-template-columns:1fr}
@@ -376,6 +396,7 @@
     .sec-pad{padding:76px 0}
     .nav-cta{display:none}
     .bene-grid{grid-template-columns:1fr}
+    .mgrid{grid-template-columns:1fr}
     .venues{grid-template-columns:repeat(2,1fr)}
     .feat-list.tech-feats{grid-template-columns:1fr;gap:20px}
     .foot-grid{grid-template-columns:1fr;gap:26px}
@@ -398,6 +419,7 @@
     <nav class="links" id="navlinks">
       <a href="#how">How It Works</a>
       <a href="#tech">Technology</a>
+      <a href="#machines">Machines</a>
       <a href="#benefits">Benefits</a>
       <a href="#host">Host a Machine</a>
       <a href="#faq">FAQ</a>
@@ -492,6 +514,68 @@
       <li><span class="chk">✓</span><div><h4>Live inventory tracking</h4><p>Know exactly what's stocked in every machine in real time — from any device, anytime.</p></div></li>
       <li><span class="chk">✓</span><div><h4>Cashless &amp; contactless</h4><p>Apple Pay, Google Pay, and tap cards. No coins, no jams, no "exact change" signs.</p></div></li>
     </ul>
+  </div>
+</section>
+
+<!-- MACHINES -->
+<section class="sec-pad" id="machines">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our machines</span>
+      <h2>Three sizes. One perfect fit.</h2>
+      <p>Every GrabnGo cooler is AI-powered, cashless, and grab-and-go. Pick the size that matches your space and foot traffic.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mcard reveal">
+        <div class="mimg"><img src="assets/mini-front.png" alt="GrabnGo Mini smart cooler"></div>
+        <div class="mbody">
+          <span class="msize">Compact</span>
+          <h3>Grab<b>nGo</b> Mini</h3>
+          <p class="mtag">Single-door · space-saver</p>
+          <ul class="mspecs">
+            <li><span>Capacity</span><b>252 drinks</b></li>
+            <li><span>Shelves</span><b>6 adjustable</b></li>
+            <li><span>Dimensions</span><b>22.8"W × 26"D × 76"H</b></li>
+            <li><span>Weight</span><b>190 lbs</b></li>
+            <li><span>AI cameras</span><b>2 · 99% accuracy</b></li>
+            <li><span>Temperature</span><b>32–50°F</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mimg"><img src="assets/pro-front.png" alt="GrabnGo Pro smart cooler"></div>
+        <div class="mbody">
+          <span class="msize">Most popular</span>
+          <h3>Grab<b>nGo</b> Pro</h3>
+          <p class="mtag">Single-door · full size</p>
+          <ul class="mspecs">
+            <li><span>Capacity</span><b>378 drinks</b></li>
+            <li><span>Shelves</span><b>6 adjustable</b></li>
+            <li><span>Dimensions</span><b>29.5"W × 25.6"D × 79.5"H</b></li>
+            <li><span>Weight</span><b>270 lbs</b></li>
+            <li><span>AI cameras</span><b>2 · 99% accuracy</b></li>
+            <li><span>Temperature</span><b>32–50°F</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mimg"><img src="assets/ultra-front.png" alt="GrabnGo Ultra smart cooler"></div>
+        <div class="mbody">
+          <span class="msize">Largest</span>
+          <h3>Grab<b>nGo</b> Ultra</h3>
+          <p class="mtag">Double-door · max capacity</p>
+          <ul class="mspecs">
+            <li><span>Capacity</span><b>756 drinks</b></li>
+            <li><span>Shelves</span><b>12 adjustable</b></li>
+            <li><span>Dimensions</span><b>53.9"W × 28"D × 79.5"H</b></li>
+            <li><span>Weight</span><b>379 lbs</b></li>
+            <li><span>AI cameras</span><b>4 · 99% accuracy</b></li>
+            <li><span>Temperature</span><b>32–50°F</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="mnote reveal">Every model includes: on-device AI checkout · tap-to-pay (card, phone, Apple&nbsp;Pay &amp; Google&nbsp;Pay) · anti-fog AI cameras · top-locking security with anti-theft steel bar · SIM connectivity (Wi-Fi optional) · plugs into a standard US outlet.</p>
   </div>
 </section>
 
@@ -601,6 +685,7 @@
         <h5>Product</h5>
         <a href="#how">How It Works</a>
         <a href="#tech">Technology</a>
+        <a href="#machines">Machines</a>
         <a href="#benefits">Benefits</a>
         <a href="#host">Host a Machine</a>
       </div>

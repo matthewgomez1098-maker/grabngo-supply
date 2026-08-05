@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrabnGo Mini — AI Smart Cooler | GrabnGo Supply Co.</title>
+<link rel="icon" type="image/png" href="assets/grabngo-icon.png">
+<style>
+:root{--bg:#e9ebef;--bg2:#e0e3e8;--panel:#f6f7f9;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.16);
+--ink:#0b0c10;--muted:#565b68;--faint:#8a8f9c;--accent:#0b0c10;--blue:#4a6cf5;--teal:#22c9a8;
+--ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(233,235,239,.85);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
+.brand img{height:38px}.brand b{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:600;color:var(--muted)}
+.nav-r a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:100px;font-weight:700}
+.sec{padding:56px 0}
+.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.back{display:inline-block;font-size:.9rem;font-weight:700;color:var(--muted);margin:22px 0 0}
+.back:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:26px 0 10px}
+.badge{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);padding:6px 13px;border-radius:100px;margin-bottom:14px}
+.hero h1{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:900;letter-spacing:-.03em;line-height:1.02}
+.hero .tag{font-size:1rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.04em;margin:6px 0 14px}
+.hero p{font-size:1.05rem;color:var(--muted);max-width:44ch;margin-bottom:20px}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:96px}
+.chip b{display:block;font-size:1.5rem;font-weight:900;letter-spacing:-.02em}
+.chip span{font-size:.8rem;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:100px;font-weight:700;font-size:.98rem}
+.btn-p{background:var(--ink);color:#fff}.btn-p:hover{transform:translateY(-2px)}
+.btn-g{background:#fff;border:1px solid var(--line2);color:var(--ink)}
+.hero-img{background:#fff;border:1px solid var(--line);border-radius:22px;height:440px;display:flex;align-items:center;justify-content:center;padding:24px}
+.hero-img img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 16px 26px rgba(0,0,0,.16))}
+
+h2.sh{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;letter-spacing:-.02em;margin:6px 0 22px}
+.specs{background:#fff;border:1px solid var(--line);border-radius:20px;padding:8px 26px}
+.specs .row{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+.specs .row:last-child{border-bottom:0}
+.specs .row span{color:var(--muted)}.specs .row b{text-align:right;font-weight:700}
+
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;position:relative}
+.shot img{width:100%;height:210px;object-fit:cover;display:block}
+.shot .lbl{position:absolute;left:12px;bottom:12px;background:rgba(11,12,16,.9);color:#fff;font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:100px;letter-spacing:.03em}
+
+.feat{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 34px}
+.feat ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:var(--muted)}
+.feat li::before{content:"✓";color:var(--teal);font-weight:900}
+.best{font-size:1rem;color:var(--muted);margin-top:16px}.best b{color:var(--ink)}
+
+.cta{text-align:center;background:var(--ink);color:#fff;border-radius:24px;padding:48px 30px;margin-top:10px}
+.cta h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;letter-spacing:-.02em;margin-bottom:10px}
+.cta p{color:#aab0bd;margin-bottom:22px}
+.cta .btns{justify-content:center}
+.cta .btn-p{background:#fff;color:var(--ink)}.cta .btn-g{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+footer{border-top:1px solid var(--line);padding:26px 0 46px;text-align:center;color:var(--faint);font-size:.9rem;font-weight:600}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.hero-img{height:360px}.gal{grid-template-columns:1fr 1fr}.feat ul{grid-template-columns:1fr}.nav-r a:not(.nav-cta){display:none}}
+</style></head><body>
+<header class="nav"><div class="wrap nav-in">
+  <a href="index.html" class="brand"><img src="assets/grabngo-icon.png" alt="GrabnGo"><span>Grab<b>nGo</b> Supply Co.</span></a>
+  <div class="nav-r"><a href="index.html#machines">All Machines</a><a href="index.html#how">How It Works</a><a href="index.html#contact" class="nav-cta">Book a Machine</a></div>
+</div></header>
+
+<div class="wrap"><a href="index.html#machines" class="back">← All machines</a></div>
+
+<section class="wrap hero">
+  <div>
+    <span class="badge">Compact</span>
+    <h1>Grab<b>nGo</b> Mini</h1>
+    <div class="tag">Single-Door · Space-Saver</div>
+    <p>Our slimmest model — a compact footprint that slots into tighter spots without giving up the smart grab-and-go experience.</p>
+    <div class="chips"><div class="chip"><b>252</b><span>drinks</span></div><div class="chip"><b>6</b><span>shelves</span></div><div class="chip"><b>22.8"W</b><span>× 26"D × 76"H</span></div></div>
+    <div class="btns"><a href="index.html#contact" class="btn btn-p">Get this machine →</a><a href="index.html#machines" class="btn btn-g">Compare sizes</a></div>
+  </div>
+  <div class="hero-img"><img src="assets/mini-front.png" alt="GrabnGo Mini"></div>
+</section>
+
+<section class="wrap sec">
+  <span class="eyebrow">Full specifications</span>
+  <h2 class="sh">Every spec, in one place</h2>
+  <div class="specs"><div class="row"><span>Drink capacity</span><b>252 drinks</b></div><div class="row"><span>Adjustable shelves</span><b>6</b></div><div class="row"><span>Product pushers</span><b>6 (3 drink + 3 snack)</b></div><div class="row"><span>Dimensions (W×D×H)</span><b>22.8" × 26" × 76"</b></div><div class="row"><span>Weight</span><b>189.6 lbs</b></div><div class="row"><span>AI cameras</span><b>2× anti-fog · 99% accuracy</b></div><div class="row"><span>Detection</span><b>On-device AI · detection in seconds</b></div><div class="row"><span>Temperature range</span><b>32°–50° F</b></div><div class="row"><span>Payment</span><b>Tap card or phone · Apple Pay &amp; Google Pay</b></div><div class="row"><span>Connectivity</span><b>SIM included (Wi-Fi optional)</b></div><div class="row"><span>Security</span><b>Top-locking + anti-theft steel bar</b></div><div class="row"><span>Power</span><b>Standard US outlet · 2.0 kWh/24hr</b></div></div>
+</section>
+
+<section class="wrap sec">
+  <span class="eyebrow">See it in your space</span>
+  <h2 class="sh">The GrabnGo Mini in the real world</h2>
+  <div class="gal"><div class="shot"><img src="assets/settings/mini-hotel.jpg" alt="GrabnGo Mini in a hotel"><span class="lbl">Hotel</span></div><div class="shot"><img src="assets/settings/mini-office.jpg" alt="GrabnGo Mini in a office"><span class="lbl">Office</span></div><div class="shot"><img src="assets/settings/mini-gym.jpg" alt="GrabnGo Mini in a gym"><span class="lbl">Gym</span></div><div class="shot"><img src="assets/settings/mini-warehouse.jpg" alt="GrabnGo Mini in a warehouse"><span class="lbl">Warehouse</span></div><div class="shot"><img src="assets/settings/mini-school.jpg" alt="GrabnGo Mini in a school"><span class="lbl">School</span></div></div>
+</section>
+
+<section class="wrap sec">
+  <div class="feat">
+    <span class="eyebrow">Included with every GrabnGo</span>
+    <h2 class="sh" style="margin-bottom:18px">Smart, secure &amp; hands-off</h2>
+    <ul><li>On-device AI checkout — cameras see what's taken, no scanning</li><li>Tap-to-pay — card, phone, Apple Pay &amp; Google Pay (no app, PIN or barcode)</li><li>Anti-fog AI cameras with 99% detection accuracy</li><li>Top-locking security with anti-theft armored steel bar</li><li>SIM connectivity included (Wi-Fi optional)</li><li>Plugs into a standard US outlet · ~2.0 kWh / 24 hr</li><li>$0 to host — we deliver, stock &amp; service everything</li></ul>
+    <p class="best"><b>Best for:</b> small offices, studios, boutique gyms &amp; lower-traffic sites.</p>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="cta">
+    <h2>Want the GrabnGo Mini at your location?</h2>
+    <p>Free to host · we install, stock &amp; service it · live in about two weeks.</p>
+    <div class="btns">
+      <a href="tel:+18402777604" class="btn btn-p">📞 Matthew · (840) 277-7604</a>
+      <a href="tel:+19096719947" class="btn btn-g">📞 Emiliano · (909) 671-9947</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 GrabnGo Supply Co. · AI-Powered Smart Vending · Southern California · grabngosupply.com</footer>
+</body></html>

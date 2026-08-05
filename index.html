@@ -233,6 +233,17 @@
   .step .connector{position:absolute;top:46px;right:-10px;color:var(--muted-2);font-size:1.3rem;z-index:2}
   .step:last-child .connector{display:none}
 
+  /* How-it-works split: video left, steps right */
+  .how-split{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;margin-top:6px}
+  .how-split .video-wrap{margin:0}
+  .hs-steps{list-style:none;display:flex;flex-direction:column;gap:0}
+  .hstep{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--line)}
+  .hstep:last-child{border-bottom:0}
+  .hstep .hn{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+    font-weight:800;font-size:1.1rem;color:#fff;background:var(--accent)}
+  .hstep h4{font-size:1.2rem;font-weight:800;letter-spacing:-.01em;margin-bottom:3px}
+  .hstep p{font-size:.98rem;color:var(--muted);line-height:1.5}
+
   /* ---------- Feature split (self-restocking) ---------- */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .split .visual{
@@ -378,6 +389,8 @@
   /* ---------- Responsive ---------- */
   @media(max-width:1000px){
     .steps{grid-template-columns:repeat(2,1fr)}
+    .how-split{grid-template-columns:1fr;gap:30px}
+    .how-split .video-wrap{margin:0 auto}
     .split{grid-template-columns:1fr;gap:40px}
     .bene-grid{grid-template-columns:repeat(2,1fr)}
     .mgrid{grid-template-columns:repeat(2,1fr)}
@@ -445,17 +458,6 @@
   <p class="hero-note reveal"><b>$0 to host.</b> We install, stock, and maintain everything.</p>
 </section>
 
-<!-- TUTORIAL VIDEO -->
-<section class="video-sec">
-  <div class="wrap">
-    <span class="eyebrow reveal" style="justify-content:center">See it in action</span>
-    <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:16px 0 32px">Watch the quick tutorial</h2>
-    <div class="video-wrap reveal">
-      <video src="assets/tutorial.mp4" controls playsinline preload="metadata"></video>
-    </div>
-  </div>
-</section>
-
 <!-- TRUST MARQUEE -->
 <section class="trust">
   <div class="wrap">
@@ -475,30 +477,22 @@
 <section class="sec-pad" id="how">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow">How it works</span>
+      <span class="eyebrow">How it works · see it in action</span>
       <h2>Open, grab, and go</h2>
-      <p>The simplest transaction your team will ever forget they made. Four steps, about six seconds.</p>
+      <p>Watch the quick tutorial, then follow the four steps — the whole thing takes about six seconds.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="connector">→</span>
-        <h3>Tap to open</h3>
-        <p>Tap a phone or card on the reader. A secure handshake unlocks the door — that's it.</p>
+    <div class="how-split reveal">
+      <div class="hs-video">
+        <div class="video-wrap">
+          <video src="assets/tutorial.mp4" controls playsinline preload="metadata"></video>
+        </div>
       </div>
-      <div class="step reveal">
-        <span class="connector">→</span>
-        <h3>Grab what you want</h3>
-        <p>Reach in and take any snack or drink you like. Take one thing or five.</p>
-      </div>
-      <div class="step reveal">
-        <span class="connector">→</span>
-        <h3>AI does the math</h3>
-        <p>Cameras and weight sensors see exactly what left the machine — no scanning, no buttons.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Close &amp; you're done</h3>
-        <p>Shut the door and the card is charged automatically. A receipt lands on your phone.</p>
-      </div>
+      <ol class="hs-steps">
+        <li class="hstep"><span class="hn">1</span><div><h4>Tap to open</h4><p>Tap a phone or card on the reader. A secure handshake unlocks the door — that's it.</p></div></li>
+        <li class="hstep"><span class="hn">2</span><div><h4>Grab what you want</h4><p>Reach in and take any snack or drink you like. Take one thing or five.</p></div></li>
+        <li class="hstep"><span class="hn">3</span><div><h4>AI does the math</h4><p>Cameras and weight sensors see exactly what left the machine — no scanning, no buttons.</p></div></li>
+        <li class="hstep"><span class="hn">4</span><div><h4>Close &amp; you're done</h4><p>Shut the door and the card is charged automatically. A receipt lands on your phone.</p></div></li>
+      </ol>
     </div>
   </div>
 </section>

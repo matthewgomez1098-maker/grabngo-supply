@@ -118,6 +118,26 @@ button.btn{font-family:inherit;cursor:pointer}
 .cart-co{width:100%;background:var(--ink);color:#fff;border:0;font-family:inherit;font-weight:800;font-size:1rem;padding:14px;border-radius:100px;cursor:pointer;transition:.15s}
 .cart-co:hover{transform:translateY(-2px)}
 .cart-co:disabled{opacity:.4;cursor:default;transform:none}
+/* model bubbles */
+.modelpicker{margin:2px 0 20px}
+.mp-label{display:block;font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.mp-bubbles{display:flex;flex-wrap:wrap;gap:8px}
+.bubble{display:inline-flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:100px;border:1px solid var(--line2);background:#fff;font-size:.85rem;font-weight:700;color:var(--ink);transition:.14s;white-space:nowrap}
+.bubble .bp{font-size:.72rem;font-weight:600;color:var(--faint)}
+.bubble:hover{border-color:var(--ink);transform:translateY(-1px)}
+.bubble.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bubble.active .bp{color:#c9ccd4}
+/* recommended */
+.recos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
+.reco{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.15s}
+.reco:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.1);border-color:var(--line2)}
+.reco-pic{background:var(--panel);height:172px;display:flex;align-items:center;justify-content:center;padding:16px;border-bottom:1px solid var(--line)}
+.reco-pic img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 8px 14px rgba(0,0,0,.14))}
+.reco-b{padding:14px 16px 18px}
+.reco-b h4{font-size:1rem;font-weight:800;letter-spacing:-.01em}
+.reco-b .model{font-size:.66rem;font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.reco-b .price{font-size:1.15rem;font-weight:900;margin-top:7px}
+@media(max-width:900px){.recos{grid-template-columns:1fr 1fr}}
 </style></head><body><header class="nav"><div class="wrap nav-in">
   <a href="index.html" class="brand"><img src="assets/grabngo-icon.png" alt="GrabnGo"><span>Grab<b>nGo</b> Supply Co.</span></a>
   <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a>
@@ -134,6 +154,7 @@ button.btn{font-family:inherit;cursor:pointer}
       <span class="badge">Frozen</span>
       <h1>GrabnGo Frost</h1>
       <div class="model">HAHA Frozen 550</div>
+      <div class="modelpicker"><span class="mp-label">Choose your model</span><div class="mp-bubbles"><a class="bubble" href="store-mini.html">Mini <span class="bp">$3,449</span></a><a class="bubble" href="store-plus.html">Plus <span class="bp">$3,850</span></a><a class="bubble" href="store-pro.html">Pro <span class="bp">$4,699</span></a><a class="bubble active" href="store-frost.html">Frost <span class="bp">$4,999</span></a><a class="bubble" href="store-max.html">Max <span class="bp">$5,400</span></a><a class="bubble" href="store-maxs.html">Max S <span class="bp">$5,900</span></a><a class="bubble" href="store-ultra.html">Ultra <span class="bp">$7,199</span></a></div></div>
       <div class="price"><span class="now">$4,999</span></div>
       <span class="save">Best-value pricing</span>
       <p class="lead">A frozen-capable smart cooler that switches between freezer, cooler, and ambient modes — sell ice cream, frozen meals, drinks, and snacks from one machine.</p>
@@ -158,6 +179,11 @@ button.btn{font-family:inherit;cursor:pointer}
     <div class="step"><div class="n">2 · Grab</div><b>Take what you want</b><span>AI cameras see what's removed — no buttons, no coils, no waiting.</span></div>
     <div class="step"><div class="n">3 · Go</div><b>Close &amp; auto-charge</b><span>The door closes and charges automatically. Seconds, not a checkout line.</span></div>
   </div>
+</section>
+
+<section class="wrap sec" style="padding-top:0">
+  <div class="sec-head" style="text-align:left;margin:0 0 18px"><span class="eyebrow">You might also like</span><h2 style="font-size:1.6rem">Recommended machines</h2></div>
+  <div class="recos"><a class="reco" href="store-max.html"><div class="reco-pic"><img src="assets/gal-max-1.png" alt="GrabnGo Max — HAHA Max 660"></div><div class="reco-b"><h4>GrabnGo Max</h4><div class="model">HAHA Max 660</div><div class="price">$5,400</div></div></a><a class="reco" href="store-maxs.html"><div class="reco-pic"><img src="assets/gal-max-1.png" alt="GrabnGo Max S — HAHA Max 620S"></div><div class="reco-b"><h4>GrabnGo Max S</h4><div class="model">HAHA Max 620S</div><div class="price">$5,900</div></div></a><a class="reco" href="store-ultra.html"><div class="reco-pic"><img src="assets/gal-ultra-1.png" alt="GrabnGo Ultra — HAHA Ultra 1200"></div><div class="reco-b"><h4>GrabnGo Ultra</h4><div class="model">HAHA Ultra 1200</div><div class="price">$7,199</div></div></a><a class="reco" href="store-mini.html"><div class="reco-pic"><img src="assets/gal-mini-1.png" alt="GrabnGo Mini — HAHA Mini 360"></div><div class="reco-b"><h4>GrabnGo Mini</h4><div class="model">HAHA Mini 360</div><div class="price">$3,449</div></div></a></div>
 </section>
 
 <section class="wrap sec" style="padding-top:0"><div class="cta">

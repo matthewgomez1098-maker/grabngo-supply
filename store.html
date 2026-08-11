@@ -81,6 +81,14 @@ td .was{color:var(--faint);text-decoration:line-through;font-weight:600;font-siz
 .cta .contact b{color:#fff}
 footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;color:var(--faint);font-size:.9rem;font-weight:600}
 .fineprint{font-size:.8rem;color:var(--faint);text-align:center;margin-top:18px;max-width:70ch;margin-left:auto;margin-right:auto}
+.thumbs{display:flex;gap:8px;padding:12px 22px 0}
+.thumb{width:54px;height:54px;border:1px solid var(--line);border-radius:9px;object-fit:contain;cursor:pointer;background:var(--panel);opacity:.55;transition:.15s;padding:3px}
+.thumb.active,.thumb:hover{opacity:1;border-color:var(--ink)}
+.card .pic .main{cursor:zoom-in}
+.slb{position:fixed;inset:0;z-index:200;background:rgba(8,10,14,.94);display:none;align-items:center;justify-content:center;padding:28px}
+.slb.open{display:flex}
+.slb img{max-width:94%;max-height:92%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.slb .x{position:absolute;top:14px;right:28px;color:#fff;font-size:2.8rem;font-weight:300;cursor:pointer;line-height:1;font-family:Arial,sans-serif}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.nav-r a:not(.nav-cta){display:none}}
 </style>
 </head>
@@ -116,7 +124,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
   <div class="grid">
     <!-- MINI -->
     <div class="card">
-      <div class="pic"><span class="tag">Compact</span><img src="assets/store-mini.png" alt="GrabnGo Mini — HAHA Mini 360"></div>
+      <div class="pic"><span class="tag">Compact</span><img class="main" src="assets/store-mini-a.png" alt="GrabnGo Mini — HAHA Mini 360"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-mini-a.png" alt="Mini front"><img class="thumb" src="assets/store-mini-b.png" alt="Mini angle"></div>
       <div class="body">
         <h3>GrabnGo Mini</h3><div class="model">HAHA Mini 360</div>
         <div class="price"><span class="now">$3,199</span><span class="was">$3,449</span></div>
@@ -132,7 +141,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
     </div>
     <!-- PRO -->
     <div class="card">
-      <div class="pic"><span class="tag pop">Most popular</span><img src="assets/store-pro.png" alt="GrabnGo Pro — HAHA Pro 542"></div>
+      <div class="pic"><span class="tag pop">Most popular</span><img class="main" src="assets/store-pro-a.png" alt="GrabnGo Pro — HAHA Pro 542"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-pro-a.png" alt="Pro front"><img class="thumb" src="assets/store-pro-b.png" alt="Pro angle"></div>
       <div class="body">
         <h3>GrabnGo Pro</h3><div class="model">HAHA Pro 542</div>
         <div class="price"><span class="now">$4,699</span><span class="was">$4,900</span></div>
@@ -148,7 +158,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
     </div>
     <!-- ULTRA -->
     <div class="card">
-      <div class="pic"><span class="tag">Max capacity</span><img src="assets/store-ultra.png" alt="GrabnGo Ultra — HAHA Ultra 1200"></div>
+      <div class="pic"><span class="tag">Max capacity</span><img class="main" src="assets/store-ultra-a.png" alt="GrabnGo Ultra — HAHA Ultra 1200"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-ultra-a.png" alt="Ultra front"><img class="thumb" src="assets/store-ultra-b.png" alt="Ultra angle"></div>
       <div class="body">
         <h3>GrabnGo Ultra</h3><div class="model">HAHA Ultra 1200</div>
         <div class="price"><span class="now">$7,499</span></div>
@@ -170,7 +181,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
   <div class="grid">
     <!-- PLUS -->
     <div class="card">
-      <div class="pic"><span class="tag">Mid-size</span><img src="assets/store-plus.png" alt="GrabnGo Plus — HAHA Plus 440"></div>
+      <div class="pic"><span class="tag">Mid-size</span><img class="main" src="assets/store-plus-a.png" alt="GrabnGo Plus — HAHA Plus 440"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-plus-a.png" alt="Plus front"><img class="thumb" src="assets/store-plus-b.png" alt="Plus angle"></div>
       <div class="body">
         <h3>GrabnGo Plus</h3><div class="model">HAHA Plus 440</div>
         <div class="price"><span class="now">$3,699</span></div>
@@ -186,7 +198,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
     </div>
     <!-- FROST -->
     <div class="card">
-      <div class="pic"><span class="tag">Frozen</span><img src="assets/store-frozen.png" alt="GrabnGo Frost — HAHA Frozen 550"></div>
+      <div class="pic"><span class="tag">Frozen</span><img class="main" src="assets/store-frost-a.png" alt="GrabnGo Frost — HAHA Frozen 550"></div>
       <div class="body">
         <h3>GrabnGo Frost</h3><div class="model">HAHA Frozen 550</div>
         <div class="price"><span class="now">$5,099</span></div>
@@ -202,7 +214,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
     </div>
     <!-- MAX -->
     <div class="card">
-      <div class="pic"><span class="tag">High capacity</span><img src="assets/store-max.png" alt="GrabnGo Max — HAHA Max 660"></div>
+      <div class="pic"><span class="tag">High capacity</span><img class="main" src="assets/store-max-a.png" alt="GrabnGo Max — HAHA Max 660"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-max-a.png" alt="Max ad-screen"><img class="thumb" src="assets/store-max-b.png" alt="Max front"></div>
       <div class="body">
         <h3>GrabnGo Max</h3><div class="model">HAHA Max 660</div>
         <div class="price"><span class="now">$5,299</span></div>
@@ -218,7 +231,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
     </div>
     <!-- MAX S -->
     <div class="card">
-      <div class="pic"><span class="tag pop">Ad screen</span><img src="assets/store-max.png" alt="GrabnGo Max S — HAHA Max 620S"></div>
+      <div class="pic"><span class="tag pop">Ad screen</span><img class="main" src="assets/store-max-a.png" alt="GrabnGo Max S — HAHA Max 620S"></div>
+      <div class="thumbs"><img class="thumb active" src="assets/store-max-a.png" alt="Max S ad-screen"><img class="thumb" src="assets/store-max-b.png" alt="Max S front"></div>
       <div class="body">
         <h3>GrabnGo Max S</h3><div class="model">HAHA Max 620S</div>
         <div class="price"><span class="now">$5,899</span></div>
@@ -257,5 +271,30 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
 </section>
 
 <footer>GrabnGo Supply Co. · grabngosupply.com · AI Smart Vending — Sales &amp; Placement · Southern California</footer>
+
+<div id="slb" class="slb"><span class="x">&times;</span><img alt="Machine full view"></div>
+<script>
+(function(){
+  // thumbnail -> swap main image
+  document.querySelectorAll('.card').forEach(function(card){
+    var main=card.querySelector('.pic .main'); if(!main) return;
+    card.querySelectorAll('.thumb').forEach(function(t){
+      t.addEventListener('click',function(){
+        main.src=t.src;
+        card.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('active');});
+        t.classList.add('active');
+      });
+    });
+  });
+  // click main -> lightbox
+  var slb=document.getElementById('slb'), lbimg=slb.querySelector('img');
+  document.querySelectorAll('.pic .main').forEach(function(m){
+    m.addEventListener('click',function(){ lbimg.src=m.src; slb.classList.add('open'); document.body.style.overflow='hidden'; });
+  });
+  function close(){ slb.classList.remove('open'); document.body.style.overflow=''; }
+  slb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
 </body>
 </html>

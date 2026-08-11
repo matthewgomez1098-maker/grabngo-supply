@@ -118,6 +118,26 @@ button.btn{font-family:inherit;cursor:pointer}
 .cart-co{width:100%;background:var(--ink);color:#fff;border:0;font-family:inherit;font-weight:800;font-size:1rem;padding:14px;border-radius:100px;cursor:pointer;transition:.15s}
 .cart-co:hover{transform:translateY(-2px)}
 .cart-co:disabled{opacity:.4;cursor:default;transform:none}
+/* model bubbles */
+.modelpicker{margin:2px 0 20px}
+.mp-label{display:block;font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.mp-bubbles{display:flex;flex-wrap:wrap;gap:8px}
+.bubble{display:inline-flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:100px;border:1px solid var(--line2);background:#fff;font-size:.85rem;font-weight:700;color:var(--ink);transition:.14s;white-space:nowrap}
+.bubble .bp{font-size:.72rem;font-weight:600;color:var(--faint)}
+.bubble:hover{border-color:var(--ink);transform:translateY(-1px)}
+.bubble.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bubble.active .bp{color:#c9ccd4}
+/* recommended */
+.recos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
+.reco{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.15s}
+.reco:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.1);border-color:var(--line2)}
+.reco-pic{background:var(--panel);height:172px;display:flex;align-items:center;justify-content:center;padding:16px;border-bottom:1px solid var(--line)}
+.reco-pic img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 8px 14px rgba(0,0,0,.14))}
+.reco-b{padding:14px 16px 18px}
+.reco-b h4{font-size:1rem;font-weight:800;letter-spacing:-.01em}
+.reco-b .model{font-size:.66rem;font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.reco-b .price{font-size:1.15rem;font-weight:900;margin-top:7px}
+@media(max-width:900px){.recos{grid-template-columns:1fr 1fr}}
 </style></head><body><header class="nav"><div class="wrap nav-in">
   <a href="index.html" class="brand"><img src="assets/grabngo-icon.png" alt="GrabnGo"><span>Grab<b>nGo</b> Supply Co.</span></a>
   <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a>
@@ -135,7 +155,7 @@ button.btn{font-family:inherit;cursor:pointer}
   <div class="pgrid">
     <div class="pcard">
       <a class="pcard-hit" href="store-mini.html">
-        <div class="pcard-pic"><span class="tag">Compact</span><img src="assets/gal-mini-1.png" alt="GrabnGo Mini — HAHA Mini 360"></div>
+        <div class="pcard-pic"><img src="assets/gal-mini-1.png" alt="GrabnGo Mini — HAHA Mini 360"></div>
         <div class="pcard-b"><h3>GrabnGo Mini</h3><div class="model">HAHA Mini 360</div>
           <div class="price"><span class="now">$3,449</span></div></div>
       </a>
@@ -143,7 +163,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-plus.html">
-        <div class="pcard-pic"><span class="tag">Mid-size</span><img src="assets/gal-plus-1.png" alt="GrabnGo Plus — HAHA Plus 440"></div>
+        <div class="pcard-pic"><img src="assets/gal-plus-1.png" alt="GrabnGo Plus — HAHA Plus 440"></div>
         <div class="pcard-b"><h3>GrabnGo Plus</h3><div class="model">HAHA Plus 440</div>
           <div class="price"><span class="now">$3,850</span></div></div>
       </a>
@@ -151,7 +171,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-pro.html">
-        <div class="pcard-pic"><span class="tag pop">Most popular</span><img src="assets/gal-pro-1.png" alt="GrabnGo Pro — HAHA Pro 542"></div>
+        <div class="pcard-pic"><img src="assets/gal-pro-1.png" alt="GrabnGo Pro — HAHA Pro 542"></div>
         <div class="pcard-b"><h3>GrabnGo Pro</h3><div class="model">HAHA Pro 542</div>
           <div class="price"><span class="now">$4,699</span></div></div>
       </a>
@@ -159,7 +179,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-frost.html">
-        <div class="pcard-pic"><span class="tag">Frozen</span><img src="assets/gal-frost-1.png" alt="GrabnGo Frost — HAHA Frozen 550"></div>
+        <div class="pcard-pic"><img src="assets/gal-frost-1.png" alt="GrabnGo Frost — HAHA Frozen 550"></div>
         <div class="pcard-b"><h3>GrabnGo Frost</h3><div class="model">HAHA Frozen 550</div>
           <div class="price"><span class="now">$4,999</span></div></div>
       </a>
@@ -167,7 +187,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-max.html">
-        <div class="pcard-pic"><span class="tag">High capacity</span><img src="assets/gal-max-1.png" alt="GrabnGo Max — HAHA Max 660"></div>
+        <div class="pcard-pic"><img src="assets/gal-max-1.png" alt="GrabnGo Max — HAHA Max 660"></div>
         <div class="pcard-b"><h3>GrabnGo Max</h3><div class="model">HAHA Max 660</div>
           <div class="price"><span class="now">$5,400</span></div></div>
       </a>
@@ -175,7 +195,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-maxs.html">
-        <div class="pcard-pic"><span class="tag pop">Ad screen</span><img src="assets/gal-max-1.png" alt="GrabnGo Max S — HAHA Max 620S"></div>
+        <div class="pcard-pic"><img src="assets/gal-max-1.png" alt="GrabnGo Max S — HAHA Max 620S"></div>
         <div class="pcard-b"><h3>GrabnGo Max S</h3><div class="model">HAHA Max 620S</div>
           <div class="price"><span class="now">$5,900</span></div></div>
       </a>
@@ -183,7 +203,7 @@ button.btn{font-family:inherit;cursor:pointer}
     </div>
     <div class="pcard">
       <a class="pcard-hit" href="store-ultra.html">
-        <div class="pcard-pic"><span class="tag">Max capacity</span><img src="assets/gal-ultra-1.png" alt="GrabnGo Ultra — HAHA Ultra 1200"></div>
+        <div class="pcard-pic"><img src="assets/gal-ultra-1.png" alt="GrabnGo Ultra — HAHA Ultra 1200"></div>
         <div class="pcard-b"><h3>GrabnGo Ultra</h3><div class="model">HAHA Ultra 1200</div>
           <div class="price"><span class="now">$7,199</span></div></div>
       </a>

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GrabnGo Ultra (HAHA Ultra 1200) — GrabnGo Supply Co.</title><meta name="description" content="GrabnGo Ultra smart vending machine — 756 drinks &amp; snacks. $7,199 from GrabnGo Supply Co. in Southern California."><style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root{--bg:#e9ebef;--bg2:#e0e3e8;--panel:#f6f7f9;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.16);
 --ink:#0b0c10;--muted:#565b68;--faint:#8a8f9c;--accent:#0b0c10;--blue:#4a6cf5;--teal:#12b393;
---ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+--ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;--fh:'Space Grotesk','Inter',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -159,6 +159,8 @@ button.btn{font-family:inherit;cursor:pointer}
 .cdots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:6px;justify-content:center;z-index:3}
 .cdot{width:7px;height:7px;border-radius:100px;background:var(--line2);transition:.2s}
 .cdot.on{background:var(--ink);width:18px}
+/* heading + price font */
+.hero h1,.sec-head h2,.pcard-b h3,.pcard-b .now,.cta h2,.dp h1,.dp .price .now,.reco-b h4,.reco-b .price,.cart-hd h3,.cart-sub,.feat-t,.step .n{font-family:var(--fh)}
 </style></head><body><header class="nav"><div class="wrap nav-in">
   <a href="index.html" class="brand"><img src="assets/grabngo-icon.png" alt="GrabnGo"><span>Grab<b>nGo</b> Supply Co.</span></a>
   <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a>

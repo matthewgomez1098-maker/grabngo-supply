@@ -84,8 +84,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
 @media(max-width:900px){.pgrid{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.dp{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.nav-r a:not(.nav-cta){display:none}.gal-main{height:340px}}
 button.btn{font-family:inherit;cursor:pointer}
 /* cart */
-.cart-btn{position:relative;display:inline-flex;align-items:center;gap:7px;background:none;border:0;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--muted);cursor:pointer}
-.cart-btn:hover{color:var(--ink)}
+.cart-btn{position:relative;display:inline-flex;align-items:center;gap:7px;background:var(--ink);border:0;font-family:inherit;font-size:.9rem;font-weight:700;color:#fff;cursor:pointer;padding:9px 16px;border-radius:100px}
+.cart-btn:hover{transform:translateY(-1px)}
 .cart-count{background:var(--blue);color:#fff;font-size:.7rem;font-weight:800;min-width:18px;height:18px;border-radius:100px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 .cart-count.empty{display:none}
 .pcard-hit{display:block}
@@ -162,10 +162,9 @@ button.btn{font-family:inherit;cursor:pointer}
 /* heading + price font */
 .hero h1,.sec-head h2,.pcard-b h3,.pcard-b .now,.cta h2,.dp h1,.dp .price .now,.reco-b h4,.reco-b .price,.cart-hd h3,.cart-sub,.feat-t,.step .n{font-family:var(--fh)}
 </style></head><body><header class="nav"><div class="wrap nav-in">
-  <a href="index.html" class="brand"><img src="assets/grabngo-icon.png" alt="GrabnGo"><span>Grab<b>nGo</b> Supply Co.</span></a>
-  <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a>
-    <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button>
-    <a href="mailto:grabngosupply@gmail.com?subject=Machine%20purchase%20inquiry" class="nav-cta">Get a quote</a></nav>
+  <a href="store.html" class="brand"><span>Grab<b>nGo</b> Supply Co.</span></a>
+  <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="mailto:grabngosupply@gmail.com?subject=Contact%20GrabnGo%20Supply%20Co.">Contact us</a>
+    <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button></nav>
 </div></header>
 <section class="wrap"><a class="back" href="store.html">← All machines</a>
   <div class="dp">

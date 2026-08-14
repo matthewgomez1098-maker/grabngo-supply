@@ -161,9 +161,43 @@ button.btn{font-family:inherit;cursor:pointer}
 .cdot.on{background:var(--ink);width:18px}
 /* heading + price font */
 .hero h1,.sec-head h2,.pcard-b h3,.pcard-b .now,.cta h2,.dp h1,.dp .price .now,.reco-b h4,.reco-b .price,.cart-hd h3,.cart-sub,.feat-t,.step .n{font-family:var(--fh)}
+/* contact page */
+.contact-wrap{max-width:640px;margin:0 auto;padding:44px 24px 64px}
+.contact-wrap .eyebrow{display:block}
+.contact-h1{font-size:clamp(2rem,4.6vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin:6px 0 6px}
+.contact-sub{color:var(--muted);font-size:1.05rem;margin-bottom:24px}
+.cform{display:flex;flex-direction:column;gap:15px}
+.cform label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:.9rem;color:var(--ink)}
+.cform input,.cform textarea{font-family:inherit;font-size:1rem;padding:12px 14px;border:1px solid var(--line2);border-radius:12px;background:#fff;color:var(--ink);resize:vertical}
+.cform input:focus,.cform textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(74,108,245,.18)}
+.cform button{align-self:flex-start;margin-top:6px}
+.contact-alt{margin-top:24px;color:var(--muted);font-size:.92rem;font-weight:600}
+/* help bot */
+.bot-fab{position:fixed;bottom:22px;right:22px;z-index:140;width:56px;height:56px;border-radius:100px;background:var(--blue);color:#fff;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;transition:.15s}
+.bot-fab:hover{transform:translateY(-2px)}
+.bot-fab svg{width:26px;height:26px}
+.bot-panel{position:fixed;bottom:88px;right:22px;z-index:141;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 130px);background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+.bot-panel.open{display:flex}
+.bot-hd{background:var(--ink);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.bot-hd b{font-size:1rem}
+.bot-hd .s{font-size:.72rem;color:#9aa6b8;font-weight:600;margin-top:2px}
+.bot-x{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+.bot-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg2)}
+.bmsg{max-width:86%;padding:10px 13px;border-radius:14px;font-size:.9rem;line-height:1.45}
+.bmsg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.bmsg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.bmsg a{color:var(--blue);text-decoration:underline;font-weight:700}
+.bmsg.user a{color:#fff}
+.bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px;background:var(--bg2)}
+.bot-chip{background:#fff;border:1px solid var(--line2);border-radius:100px;padding:6px 11px;font-size:.76rem;font-weight:700;cursor:pointer;color:var(--ink)}
+.bot-chip:hover{border-color:var(--ink)}
+.bot-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:var(--bg)}
+.bot-in input{flex:1;font-family:inherit;font-size:.92rem;padding:10px 13px;border:1px solid var(--line2);border-radius:100px;background:#fff;color:var(--ink)}
+.bot-in input:focus{outline:0;border-color:var(--blue)}
+.bot-in button{background:var(--ink);color:#fff;border:0;border-radius:100px;padding:0 16px;font-weight:800;cursor:pointer}
 </style></head><body><header class="nav"><div class="wrap nav-in">
   <a href="store.html" class="brand"><span>Grab<b>nGo</b> Supply Co.</span></a>
-  <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="mailto:grabngosupply@gmail.com?subject=Contact%20GrabnGo%20Supply%20Co.">Contact us</a>
+  <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="contact.html">Contact us</a>
     <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button></nav>
 </div></header>
 <section class="wrap"><a class="back" href="store.html">← All machines</a>
@@ -292,5 +326,47 @@ window.Cart=(function(){
  };
 })();
 document.addEventListener('DOMContentLoaded',function(){Cart._r();});
+</script>
+<button class="bot-fab" id="botFab" onclick="Bot.toggle()" aria-label="Open help chat">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<aside class="bot-panel" id="botPanel" aria-label="Help chat">
+  <div class="bot-hd"><div><b>GrabnGo Help</b><div class="s">Machines, pricing, financing &amp; more</div></div><button class="bot-x" onclick="Bot.toggle()" aria-label="Close">&times;</button></div>
+  <div class="bot-msgs" id="botMsgs"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form class="bot-in" onsubmit="return Bot.send()"><input id="botInput" placeholder="Type your question…" autocomplete="off"><button type="submit">Send</button></form>
+</aside>
+<script>
+window.Bot=(function(){
+ var M=[{"n": "GrabnGo Mini", "m": "HAHA Mini 360", "p": "$3,449", "u": "store-mini.html"}, {"n": "GrabnGo Plus", "m": "HAHA Plus 440", "p": "$3,850", "u": "store-plus.html"}, {"n": "GrabnGo Pro", "m": "HAHA Pro 542", "p": "$4,699", "u": "store-pro.html"}, {"n": "GrabnGo Frost", "m": "HAHA Frozen 550", "p": "$4,999", "u": "store-frost.html"}, {"n": "GrabnGo Max", "m": "HAHA Max 660", "p": "$5,400", "u": "store-max.html"}, {"n": "GrabnGo Ultra", "m": "HAHA Ultra 1200", "p": "$7,199", "u": "store-ultra.html"}, {"n": "GrabnGo Spiral", "m": "TCN-CSC-10G(H5)", "p": "$4,000", "u": "store-spiral.html"}, {"n": "GrabnGo Spiral Touch", "m": "TCN-CSC-10C(V22)", "p": "$4,400", "u": "store-spiraltouch.html"}, {"n": "GrabnGo Spiral ADA", "m": "TCN-CSC-6G(H5) ADA", "p": "$3,800", "u": "store-ada.html"}, {"n": "GrabnGo Fridge", "m": "AI Smart Fridge", "p": "$6,295", "u": "store-fridge.html"}, {"n": "GrabnGo Pantry", "m": "AI Smart Pantry", "p": "$6,295", "u": "store-pantry.html"}, {"n": "GrabnGo Freezer", "m": "AI Smart Freezer", "p": "$6,995", "u": "store-freezer.html"}];
+ var isOpen=false, greeted=false;
+ function el(id){return document.getElementById(id);}
+ function add(who,h){var b=el('botMsgs');var d=document.createElement('div');d.className='bmsg '+who;d.innerHTML=h;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+ function list(){return M.map(function(x){return '&bull; <a href="'+x.u+'">'+x.n+'</a> &mdash; '+x.p;}).join('<br>');}
+ function answer(q){
+   q=q.toLowerCase();
+   if(/^(hi|hey|hello|yo|sup|good\s)/.test(q)) return 'Hey! I can help with our machines, prices, financing, delivery, and how it works. What do you need?';
+   var hit=M.filter(function(x){var s=x.n.toLowerCase().replace('grabngo ','');return s.length>2 && q.indexOf(s)>-1;});
+   if(hit.length) return hit[0].n+' ('+hit[0].m+') is <b>'+hit[0].p+'</b>. <a href="'+hit[0].u+'">See full specs and photos</a>.';
+   if(/financ|monthly|payment plan|installment|lease/.test(q)) return 'Yes, financing is available on approved credit so you can spread the cost and get earning sooner. <a href="contact.html">Contact us</a> for terms.';
+   if(/ship|deliver|pickup|pick up|freight/.test(q)) return 'We offer local pickup in the Inland Empire (Fontana, Rancho Cucamonga, Jurupa Valley) or fast delivery. Tax and freight are calculated after.';
+   if(/warrant/.test(q)) return 'Every machine is new with a manufacturer warranty. Our fridge and freezer units include a 5-year compressor warranty.';
+   if(/ada|accessible|wheelchair/.test(q)) return 'The <a href="store-ada.html">GrabnGo Spiral ADA</a> is ADA-accessible with a low, easy-reach pickup bin.';
+   if(/freezer|frozen|ice cream/.test(q)) return 'For frozen goods, check the <a href="store-freezer.html">GrabnGo Freezer</a> or the <a href="store-frost.html">GrabnGo Frost</a>.';
+   if(/how.*(work|use)|grab and go|tap and|checkout work/.test(q)) return 'AI coolers: tap a card or phone, grab what you want, and the door auto-charges you. Spiral machines: choose on the keypad or touchscreen, pay, and collect from the bin.';
+   if(/buy|order|purchase|checkout/.test(q)) return 'Open any machine and hit <b>Order</b> or <b>Add to cart</b>. <a href="store.html">Browse machines</a>.';
+   if(/price|cost|how much|pricing|machine|model|lineup|catalog|what.*(sell|have|offer)|list/.test(q)) return 'Here is our lineup:<br>'+list();
+   if(/contact|human|call|phone|email|talk|quote|rep|sales|reach/.test(q)) return 'Reach us on our <a href="contact.html">contact page</a>, email grabngosupply@gmail.com, or call/text Matthew <b>(840) 277-7604</b> or Emiliano <b>(909) 671-9947</b>.';
+   if(/thank/.test(q)) return 'You are welcome! Anything else I can help with?';
+   return 'I can help with machines, pricing, financing, delivery, warranty, and how it works. For anything else, <a href="contact.html">contact us</a> or email grabngosupply@gmail.com.';
+ }
+ function chips(){var items=['What machines do you have?','Financing?','How does it work?','Delivery and pickup','Contact a human'];el('botChips').innerHTML=items.map(function(t){return '<button class="bot-chip" onclick="Bot.ask(this.textContent)">'+t+'</button>';}).join('');}
+ function greet(){if(greeted)return;greeted=true;add('bot','Hi! I am the GrabnGo help bot. Ask me about our machines, prices, financing, or delivery.');chips();}
+ return {
+  toggle:function(){isOpen=!isOpen;el('botPanel').classList.toggle('open',isOpen);if(isOpen)greet();},
+  ask:function(t){el('botInput').value=t;this.send();},
+  send:function(){var i=el('botInput');var q=i.value.trim();if(!q)return false;add('user',q.replace(/&/g,'&amp;').replace(/</g,'&lt;'));i.value='';setTimeout(function(){add('bot',answer(q));},280);return false;}
+ };
+})();
 </script>
 </body></html>

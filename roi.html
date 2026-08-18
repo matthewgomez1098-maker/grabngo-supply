@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GrabnGo Freezer (AI Smart Freezer) — GrabnGo Supply Co.</title><meta name="description" content="GrabnGo Freezer smart vending machine — up to ~378 cans · frozen. $6,995 from GrabnGo Supply Co. in Southern California."><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>What Your Machine Can Earn — GrabnGo Supply Co.</title><meta name="description" content="See the return on investment a GrabnGo machine can make — projected monthly profit, how many months to pay it off, and 1–2 year returns."><style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 :root{--bg:#e9ebef;--bg2:#e0e3e8;--panel:#f6f7f9;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.16);
 --ink:#0b0c10;--muted:#565b68;--faint:#8a8f9c;--accent:#0b0c10;--blue:#4a6cf5;--teal:#12b393;
@@ -234,71 +234,53 @@ button.btn{font-family:inherit;cursor:pointer}
   <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="roi.html">ROI</a><a href="contact.html">Contact us</a>
     <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button></nav>
 </div></header>
-<section class="wrap"><a class="back" href="store.html">← All machines</a>
-  <div class="dp">
-    <div>
-      <div class="gal-main"><img id="mainimg" src="assets/mm-fridge-1.png" alt="GrabnGo Freezer — AI Smart Freezer"></div>
-      <div class="thumbs"><img class="thumb active" src="assets/mm-fridge-1.png" alt="GrabnGo Freezer view 1"><img class="thumb" src="assets/mm-fridge-2.png" alt="GrabnGo Freezer view 2"><img class="thumb" src="assets/mm-fridge-3.png" alt="GrabnGo Freezer view 3"><img class="thumb" src="assets/mm-fridge-4.png" alt="GrabnGo Freezer view 4"></div>
+<section class="wrap roi-hero">
+  <span class="eyebrow">Return on investment</span>
+  <h1>Your machine pays for itself in <span>months, not years.</span></h1>
+  <p>A well-placed GrabnGo machine can recoup its cost fast, then turn into steady monthly profit. Move the sliders to see your numbers.</p>
+</section>
+
+<section class="wrap roi-calc">
+  <div class="roi-grid">
+    <div class="roi-inputs">
+      <h3>Your setup</h3>
+      <div class="rin"><label>Machine</label><select id="roiMachine" oninput="ROI.calc()"><option value="3449">GrabnGo Mini — $3,449</option><option value="3850">GrabnGo Plus — $3,850</option><option value="4699" selected>GrabnGo Pro — $4,699</option><option value="4999">GrabnGo Frost — $4,999</option><option value="5400">GrabnGo Max — $5,400</option><option value="7199">GrabnGo Ultra — $7,199</option><option value="4000">GrabnGo Spiral — $4,000</option><option value="4400">GrabnGo Spiral Touch — $4,400</option><option value="3800">GrabnGo Spiral ADA — $3,800</option><option value="6295">GrabnGo Fridge — $6,295</option><option value="6295">GrabnGo Pantry — $6,295</option><option value="6995">GrabnGo Freezer — $6,995</option></select></div>
+      <div class="rin"><label>Items sold per day <b id="roiItemsV">25</b></label><input type="range" id="roiItems" min="5" max="80" value="25" oninput="ROI.calc()"></div>
+      <div class="rin"><label>Average price per item <b id="roiPriceV">$3.00</b></label><input type="range" id="roiPrice" min="1.5" max="6" step="0.25" value="3" oninput="ROI.calc()"></div>
+      <div class="rin"><label>Product cost (of each sale) <b id="roiCogsV">45%</b></label><input type="range" id="roiCogs" min="30" max="60" value="45" oninput="ROI.calc()"></div>
     </div>
-    <div>
-      <span class="badge">Smart Freezer</span>
-      <h1>GrabnGo Freezer</h1>
-      <div class="model">AI Smart Freezer</div>
-      <div class="modelpicker"><span class="mp-label">Choose your model</span><div class="mp-bubbles"><a class="bubble" href="store-mini.html">Mini</a><a class="bubble" href="store-plus.html">Plus</a><a class="bubble" href="store-pro.html">Pro</a><a class="bubble" href="store-frost.html">Frost</a><a class="bubble" href="store-max.html">Max</a><a class="bubble" href="store-ultra.html">Ultra</a><a class="bubble" href="store-spiral.html">Spiral</a><a class="bubble" href="store-spiraltouch.html">Spiral Touch</a><a class="bubble" href="store-ada.html">Spiral ADA</a><a class="bubble" href="store-fridge.html">Fridge</a><a class="bubble" href="store-pantry.html">Pantry</a><a class="bubble active" href="store-freezer.html">Freezer</a></div></div>
-      <div class="price"><span class="now">$6,995</span></div>
-      <span class="save">Best-value pricing</span>
-      <p class="lead">A frozen-capable AI smart store that sells ice cream, frozen meals, and cold drinks 24/7 with no staff. Four anti-fog cameras track every pick and auto-charge on close. Built tough with UL, NSF &amp; NAMA HealthLock certification and a 5-year compressor warranty.</p>
-      <div class="btns">
-        <a href="https://buy.stripe.com/cNi7sMbc4eDn8803lI0ZW0c" class="btn btn-p">Order this machine →</a>
-        <button class="btn btn-g" data-key="freezer" data-name="GrabnGo Freezer" data-model="AI Smart Freezer" data-price="6995" data-disp="$6,995" data-pay="https://buy.stripe.com/cNi7sMbc4eDn8803lI0ZW0c" data-img="assets/mm-fridge-1.png" onclick="Cart.add(this)">Add to cart</button>
+    <div class="roi-out">
+      <div class="roi-tiles">
+        <div class="rtile hl"><div class="v" id="outPayback">—</div><div class="k">Pays off in</div></div>
+        <div class="rtile"><div class="v" id="outNet">—</div><div class="k">Net / month</div></div>
+        <div class="rtile"><div class="v" id="outY1">—</div><div class="k">Profit · year 1</div></div>
+        <div class="rtile"><div class="v" id="outY2">—</div><div class="k">Profit · 2 years</div></div>
       </div>
-      <p class="mini-note">Financing available · local pickup or fast delivery. <a href="mailto:grabngosupply@gmail.com?subject=Question%20about%20AI%20Smart%20Freezer" style="text-decoration:underline">Questions? Ask us.</a></p>
+      <div class="roi-card">
+        <h4>When you make your money back</h4>
+        <div class="sub">Your cash position over 24 months — it starts negative (the machine cost), climbs, and crosses $0 the month it's paid off. Everything above the line is pure profit.</div>
+        <div class="roi-chart" id="roiChart"></div>
+      </div>
+      <div class="roi-card">
+        <h4>Where each month's sales go</h4>
+        <div class="sub" id="flowSub">Monthly revenue —</div>
+        <div class="flow" id="roiFlow"></div>
+        <div class="flow-legend"><span><i style="background:#94a3b8"></i>Product cost</span><span><i style="background:#cbd5e1"></i>Fees &amp; data</span><span><i style="background:var(--teal)"></i>Your profit</span></div>
+      </div>
     </div>
   </div>
+  <p class="roi-note">Projections are estimates for a well-placed, high-traffic location and depend on your foot traffic, product mix, and pricing. Assumes ~5% for card processing and cellular data. Not a guarantee of earnings; excludes taxes, freight, and any financing costs.</p>
 </section>
 
-<section class="wrap" style="padding-top:6px"><div class="features"><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3z"/><circle cx="8.5" cy="12" r="2.4"/></svg></div><div class="feat-t">4× AI Cameras</div><div class="feat-s">Anti-fog vision</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2h5M10 2v2.6a3 3 0 0 1-.5 1.6L8.7 7.6A4 4 0 0 0 8 9.9V20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9.9a4 4 0 0 0-.7-2.3l-.8-1.4a3 3 0 0 1-.5-1.6V2"/><path d="M8 13h8"/></svg></div><div class="feat-t">~378 Items</div><div class="feat-s">High capacity</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.3h18M3 14.6h18"/></svg></div><div class="feat-t">5 Shelves</div><div class="feat-s">Adjustable steel</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/></svg></div><div class="feat-t">Freezer</div><div class="feat-s">Frozen storage</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a8 8 0 0 1 0 7M10 5.5a13 13 0 0 1 0 13M14 3.5a18 18 0 0 1 0 17"/></svg></div><div class="feat-t">Tap to Pay</div><div class="feat-s">Card, Apple & Google Pay</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="feat-t">HD Display</div><div class="feat-s">1920×540 · Android</div></div><div class="feat"><div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></div><div class="feat-t">24/7</div><div class="feat-s">Self-service</div></div></div></section>
-
-<section class="wrap sec">
-  <div class="sec-head" style="text-align:left;margin:0 0 18px"><span class="eyebrow">Full specifications</span><h2 style="font-size:1.6rem">Every spec, in one place</h2></div>
-  <div class="specs"><div class="row"><span>Capacity</span><b>~378 cans / mixed items</b></div><div class="row"><span>Dimensions (W×D×H)</span><b>30.5&quot; × 36.7&quot; × 79.6&quot;</b></div><div class="row"><span>Weight</span><b>350 lbs</b></div><div class="row"><span>AI cameras</span><b>4× high-speed, anti-fog</b></div><div class="row"><span>Shelves</span><b>5 adjustable food-grade steel racks</b></div><div class="row"><span>Screen</span><b>19.2&quot; HD 1920×540 · Android 10</b></div><div class="row"><span>Cooling</span><b>Freezer</b></div><div class="row"><span>Payment</span><b>Visa/MC/AMEX · Apple Pay · Google Wallet · swipe, chip &amp; tap</b></div><div class="row"><span>Connectivity</span><b>3G/4G/LTE SIM (multi-carrier) · WiFi · Ethernet</b></div><div class="row"><span>Power</span><b>115V/60Hz · 408W · ~4 kWh/day</b></div><div class="row"><span>Certifications</span><b>UL · NSF · NAMA (HealthLock) · PCI-DSS</b></div><div class="row"><span>Warranty</span><b>5-yr compressor · 3-yr other parts</b></div></div>
-</section>
-
-<section class="wrap sec" style="padding-top:0">
-  <div class="sec-head" style="text-align:left;margin:0 0 18px"><span class="eyebrow">How it works</span><h2 style="font-size:1.6rem">Walk up. Tap. Grab. Go.</h2></div>
-  <div class="steps">
-    <div class="step"><div class="n">1 · Tap</div><b>Unlock with a tap</b><span>Card or phone — Apple Pay &amp; Google Pay. No app, PIN, or cash.</span></div>
-    <div class="step"><div class="n">2 · Grab</div><b>Take what you want</b><span>AI cameras see what's removed — no buttons, no coils, no waiting.</span></div>
-    <div class="step"><div class="n">3 · Go</div><b>Close &amp; auto-charge</b><span>The door closes and charges automatically. Seconds, not a checkout line.</span></div>
-  </div>
-</section>
-
-<section class="wrap sec" style="padding-top:0">
-  <div class="sec-head" style="text-align:left;margin:0 0 18px"><span class="eyebrow">You might also like</span><h2 style="font-size:1.6rem">Recommended machines</h2></div>
-  <div class="recos"><a class="reco" href="store-mini.html"><div class="reco-pic"><img src="assets/gal-mini-1.png" alt="GrabnGo Mini — HAHA Mini 360"></div><div class="reco-b"><h4>GrabnGo Mini</h4><div class="model">HAHA Mini 360</div><div class="price">$3,449</div></div></a><a class="reco" href="store-plus.html"><div class="reco-pic"><img src="assets/gal-plus-1.png" alt="GrabnGo Plus — HAHA Plus 440"></div><div class="reco-b"><h4>GrabnGo Plus</h4><div class="model">HAHA Plus 440</div><div class="price">$3,850</div></div></a><a class="reco" href="store-pro.html"><div class="reco-pic"><img src="assets/gal-pro-1.png" alt="GrabnGo Pro — HAHA Pro 542"></div><div class="reco-b"><h4>GrabnGo Pro</h4><div class="model">HAHA Pro 542</div><div class="price">$4,699</div></div></a><a class="reco" href="store-frost.html"><div class="reco-pic"><img src="assets/gal-frost-1.png" alt="GrabnGo Frost — HAHA Frozen 550"></div><div class="reco-b"><h4>GrabnGo Frost</h4><div class="model">HAHA Frozen 550</div><div class="price">$4,999</div></div></a></div>
-</section>
-
-<section class="wrap sec" style="padding-top:0"><div class="cta">
-  <span class="eyebrow" style="color:#37e0be">Ready to order?</span>
-  <h2>Get the GrabnGo Freezer — for less.</h2>
-  <p>Tell us your city and quantity and we'll send a quote with freight and financing options.</p>
-  <a href="https://buy.stripe.com/cNi7sMbc4eDn8803lI0ZW0c" class="btn btn-p">Order now →</a>
-  <p class="contact">Call or text: <b>Matthew (840) 277-7604</b> &nbsp;·&nbsp; <b>Emiliano (909) 671-9947</b></p>
+<section class="wrap sec"><div class="cta">
+  <span class="eyebrow" style="color:#37e0be">Ready to start earning?</span>
+  <h2>Pick your machine and go.</h2>
+  <p>Browse the lineup and order online, or let us help you place one and get earning.</p>
+  <a href="store.html" class="btn btn-p">Browse machines →</a>
+  <p class="contact">Questions? <a href="contact.html" style="color:#fff;text-decoration:underline">Contact us</a> &nbsp;·&nbsp; Matthew (840) 277-7604 &nbsp;·&nbsp; Emiliano (909) 671-9947</p>
 </div></section>
 
 <footer>GrabnGo Supply Co. · grabngosupply.com · AI Smart Vending — Sales &amp; Placement · Southern California</footer>
-<div id="lb" class="lb"><span class="x">&times;</span><img alt="full view"></div>
-<script>
-(function(){
- var main=document.getElementById('mainimg');
- document.querySelectorAll('.thumb').forEach(function(t){t.addEventListener('click',function(){
-   main.src=t.src;document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('active')});t.classList.add('active');});});
- var lb=document.getElementById('lb'),li=lb.querySelector('img');
- main.addEventListener('click',function(){li.src=main.src;lb.classList.add('open');document.body.style.overflow='hidden';});
- function c(){lb.classList.remove('open');document.body.style.overflow='';}
- lb.addEventListener('click',c);document.addEventListener('keydown',function(e){if(e.key==='Escape')c();});
-})();
-</script>
 <div class="cart-ov" id="cartOv" onclick="Cart.close()"></div>
 <aside class="cart-dr" id="cartDr" aria-label="Shopping cart">
   <div class="cart-hd"><h3>Your cart</h3><button class="cart-x" onclick="Cart.close()" aria-label="Close">&times;</button></div>
@@ -402,5 +384,42 @@ window.Bot=(function(){
   send:function(){var i=el('botInput');var q=i.value.trim();if(!q)return false;add('user',q.replace(/&/g,'&amp;').replace(/</g,'&lt;'));i.value='';setTimeout(function(){add('bot',answer(q));},280);return false;}
  };
 })();
+</script>
+<script>
+window.ROI=(function(){
+ function $(id){return document.getElementById(id);}
+ function money(n){return (n<0?'-$':'$')+Math.round(Math.abs(n)).toLocaleString('en-US');}
+ function drawChart(price,net){
+   var months=24,w=580,h=250,padL=54,padR=16,padT=20,padB=28;
+   var pts=[];for(var m=0;m<=months;m++){pts.push(net*m-price);}
+   var lo=Math.min(0,pts[0]),hi=Math.max(0,pts[months]),range=(hi-lo)||1;
+   function X(m){return padL+(w-padL-padR)*(m/months);}
+   function Y(v){return padT+(h-padT-padB)*(1-(v-lo)/range);}
+   var zeroY=Y(0),be=net>0?price/net:null,svg='<svg viewBox="0 0 '+w+' '+h+'" xmlns="http://www.w3.org/2000/svg">';
+   if(be!==null&&be<months){var a='M'+X(be).toFixed(1)+','+zeroY.toFixed(1);for(var m=Math.ceil(be);m<=months;m++){a+=' L'+X(m).toFixed(1)+','+Y(pts[m]).toFixed(1);}a+=' L'+X(months).toFixed(1)+','+zeroY.toFixed(1)+' Z';svg+='<path d="'+a+'" fill="rgba(18,179,147,.16)"/>';}
+   svg+='<line x1="'+padL+'" y1="'+zeroY.toFixed(1)+'" x2="'+(w-padR)+'" y2="'+zeroY.toFixed(1)+'" stroke="#cbd5e1" stroke-dasharray="3 3"/>';
+   svg+='<text x="'+(padL-6)+'" y="'+(zeroY+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="#8a8f9c">$0</text>';
+   var d='M'+X(0)+','+Y(pts[0]).toFixed(1);for(var m=1;m<=months;m++){d+=' L'+X(m).toFixed(1)+','+Y(pts[m]).toFixed(1);}
+   svg+='<path d="'+d+'" fill="none" stroke="#0b0c10" stroke-width="2.5" stroke-linejoin="round"/>';
+   if(be!==null&&be<=months){svg+='<line x1="'+X(be).toFixed(1)+'" y1="'+padT+'" x2="'+X(be).toFixed(1)+'" y2="'+(h-padB)+'" stroke="#12b393" stroke-width="1.5" stroke-dasharray="4 4"/><text x="'+X(be).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#0f766e">Paid off: '+be.toFixed(1)+' mo</text>';}
+   [0,6,12,18,24].forEach(function(m){svg+='<text x="'+X(m).toFixed(1)+'" y="'+(h-8)+'" text-anchor="middle" font-size="11" fill="#8a8f9c">'+m+'</text>';});
+   svg+='<text x="'+X(0)+'" y="'+(Y(pts[0])+15).toFixed(1)+'" font-size="11" font-weight="700" fill="#ef4444">'+money(pts[0])+'</text>';
+   svg+='<text x="'+(w-padR)+'" y="'+(Y(pts[months])-8).toFixed(1)+'" text-anchor="end" font-size="12" font-weight="800" fill="#0f766e">'+money(pts[months])+'</text>';
+   $('roiChart').innerHTML=svg+'</svg>';
+ }
+ function calc(){
+   var price=+$('roiMachine').value,per=+$('roiItems').value,avg=+$('roiPrice').value,cogs=+$('roiCogs').value/100,fees=0.05;
+   var rev=per*avg*30,cost=rev*cogs,fee=rev*fees,net=rev-cost-fee;
+   $('roiItemsV').textContent=per;$('roiPriceV').textContent='$'+avg.toFixed(2);$('roiCogsV').textContent=Math.round(cogs*100)+'%';
+   $('outNet').textContent=money(net)+'/mo';$('outPayback').textContent=net>0?(price/net).toFixed(1)+' mo':'—';
+   $('outY1').textContent=money(net*12-price);$('outY2').textContent=money(net*24-price);
+   var pp=Math.max(net,0)/rev*100,cp=cost/rev*100,fp=fee/rev*100;
+   $('roiFlow').innerHTML='<div class="fc" style="width:'+cp.toFixed(1)+'%">'+Math.round(cp)+'%</div><div class="ff" style="width:'+fp.toFixed(1)+'%"></div><div class="fp" style="width:'+pp.toFixed(1)+'%">'+Math.round(pp)+'%</div>';
+   $('flowSub').textContent='Monthly revenue '+money(rev)+' — split into product cost, fees & data, and your profit.';
+   drawChart(price,net);
+ }
+ return {calc:calc};
+})();
+document.addEventListener('DOMContentLoaded',function(){ROI.calc();});
 </script>
 </body></html>

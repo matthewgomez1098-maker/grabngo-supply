@@ -240,41 +240,41 @@ button.btn{font-family:inherit;cursor:pointer}
     <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button></nav>
 </div></header>
 <section class="wrap roi-hero">
-  <span class="eyebrow">Return on investment</span>
-  <h1>Your machine pays for itself in <span>months, not years.</span></h1>
+  <span class="eyebrow">Real talk on the money</span>
+  <h1>A machine that pays for itself in <span>months, not years.</span></h1>
   <p>We run these machines ourselves, so we know the numbers. A well-placed machine can pay for itself fast, then turn into steady monthly profit. Move the sliders to see yours.</p>
 </section>
 
 <section class="wrap roi-calc">
   <div class="roi-grid">
     <div class="roi-inputs">
-      <h3>Your setup</h3>
-      <div class="rin"><label>Machine</label><select id="roiMachine" oninput="ROI.calc()"><option value="3449">GrabnGo Mini — $3,449</option><option value="3850">GrabnGo Plus — $3,850</option><option value="4699" selected>GrabnGo Pro — $4,699</option><option value="4999">GrabnGo Frost — $4,999</option><option value="5400">GrabnGo Max — $5,400</option><option value="7199">GrabnGo Ultra — $7,199</option><option value="4000">GrabnGo Spiral — $4,000</option><option value="4400">GrabnGo Spiral Touch — $4,400</option><option value="3800">GrabnGo Spiral ADA — $3,800</option><option value="6295">GrabnGo Fridge — $6,295</option><option value="6295">GrabnGo Pantry — $6,295</option><option value="6995">GrabnGo Freezer — $6,995</option></select></div>
-      <div class="rin"><label>Items sold per day <b id="roiItemsV">25</b></label><input type="range" id="roiItems" min="5" max="80" value="25" oninput="ROI.calc()"></div>
-      <div class="rin"><label>Average price per item <b id="roiPriceV">$3.00</b></label><input type="range" id="roiPrice" min="1.5" max="6" step="0.25" value="3" oninput="ROI.calc()"></div>
-      <div class="rin"><label>Product cost (of each sale) <b id="roiCogsV">45%</b></label><input type="range" id="roiCogs" min="30" max="60" value="45" oninput="ROI.calc()"></div>
+      <h3>Your numbers — drag to change</h3>
+      <div class="rin"><label>Which machine?</label><select id="roiMachine" oninput="ROI.calc()"><option value="3449">GrabnGo Mini — $3,449</option><option value="3850">GrabnGo Plus — $3,850</option><option value="4699" selected>GrabnGo Pro — $4,699</option><option value="4999">GrabnGo Frost — $4,999</option><option value="5400">GrabnGo Max — $5,400</option><option value="7199">GrabnGo Ultra — $7,199</option><option value="4000">GrabnGo Spiral — $4,000</option><option value="4400">GrabnGo Spiral Touch — $4,400</option><option value="3800">GrabnGo Spiral ADA — $3,800</option><option value="6295">GrabnGo Fridge — $6,295</option><option value="6295">GrabnGo Pantry — $6,295</option><option value="6995">GrabnGo Freezer — $6,995</option></select></div>
+      <div class="rin"><label>Items you'd sell a day <b id="roiItemsV">25</b></label><input type="range" id="roiItems" min="5" max="80" value="25" oninput="ROI.calc()"></div>
+      <div class="rin"><label>What you charge per item <b id="roiPriceV">$3.00</b></label><input type="range" id="roiPrice" min="1.5" max="6" step="0.25" value="3" oninput="ROI.calc()"></div>
+      <div class="rin"><label>What each item costs you <b id="roiCogsV">45%</b></label><input type="range" id="roiCogs" min="30" max="60" value="45" oninput="ROI.calc()"></div>
     </div>
     <div class="roi-out">
       <div class="roi-tiles">
-        <div class="rtile hl"><div class="v" id="outPayback">—</div><div class="k">Pays off in</div></div>
-        <div class="rtile"><div class="v" id="outNet">—</div><div class="k">Net / month</div></div>
-        <div class="rtile"><div class="v" id="outY1">—</div><div class="k">Profit · year 1</div></div>
-        <div class="rtile"><div class="v" id="outY2">—</div><div class="k">Profit · 2 years</div></div>
+        <div class="rtile hl"><div class="v" id="outPayback">—</div><div class="k">Pays for itself in</div></div>
+        <div class="rtile"><div class="v" id="outNet">—</div><div class="k">You keep / month</div></div>
+        <div class="rtile"><div class="v" id="outY1">—</div><div class="k">Made after 1 year</div></div>
+        <div class="rtile"><div class="v" id="outY2">—</div><div class="k">Made after 2 years</div></div>
       </div>
       <div class="roi-card">
-        <h4>When you make your money back</h4>
-        <div class="sub">Your cash position over 24 months — it starts negative (the machine cost), climbs, and crosses $0 the month it's paid off. Everything above the line is pure profit.</div>
+        <h4>When you get your money back</h4>
+        <div class="sub">Here's the honest picture. You start out down by what the machine cost you — then every month climbs you back up. The month the line crosses $0, the machine has paid for itself. Everything after that is money in your pocket.</div>
         <div class="roi-chart" id="roiChart"></div>
       </div>
       <div class="roi-card">
-        <h4>Where each month's sales go</h4>
-        <div class="sub" id="flowSub">Monthly revenue —</div>
+        <h4>Where each month's money goes</h4>
+        <div class="sub" id="flowSub">Monthly sales —</div>
         <div class="flow" id="roiFlow"></div>
-        <div class="flow-legend"><span><i style="background:#94a3b8"></i>Product cost</span><span><i style="background:#cbd5e1"></i>Fees &amp; data</span><span><i style="background:var(--teal)"></i>Your profit</span></div>
+        <div class="flow-legend"><span><i style="background:#94a3b8"></i>Cost of the drinks &amp; snacks</span><span><i style="background:#cbd5e1"></i>Card fees &amp; data</span><span><i style="background:var(--teal)"></i>What you keep</span></div>
       </div>
     </div>
   </div>
-  <p class="roi-note">Projections are estimates for a well-placed, high-traffic location and depend on your foot traffic, product mix, and pricing. Assumes ~5% for card processing and cellular data. Not a guarantee of earnings; excludes taxes, freight, and any financing costs.</p>
+  <p class="roi-note">These are honest estimates for a busy, well-placed spot — your real numbers come down to foot traffic, what you stock, and your prices. We'd rather under-promise: message us and we'll talk through a realistic number for your exact location. (Assumes ~5% for card fees &amp; data; excludes tax, freight, and any financing costs.)</p>
 </section>
 
 <section class="wrap sec"><div class="cta">
@@ -401,12 +401,12 @@ window.ROI=(function(){
    function X(m){return padL+(w-padL-padR)*(m/months);}
    function Y(v){return padT+(h-padT-padB)*(1-(v-lo)/range);}
    var zeroY=Y(0),be=net>0?price/net:null,svg='<svg viewBox="0 0 '+w+' '+h+'" xmlns="http://www.w3.org/2000/svg">';
-   if(be!==null&&be<months){var a='M'+X(be).toFixed(1)+','+zeroY.toFixed(1);for(var m=Math.ceil(be);m<=months;m++){a+=' L'+X(m).toFixed(1)+','+Y(pts[m]).toFixed(1);}a+=' L'+X(months).toFixed(1)+','+zeroY.toFixed(1)+' Z';svg+='<path d="'+a+'" fill="rgba(18,179,147,.16)"/>';}
+   if(be!==null&&be<months){var a='M'+X(be).toFixed(1)+','+zeroY.toFixed(1);for(var m=Math.ceil(be);m<=months;m++){a+=' L'+X(m).toFixed(1)+','+Y(pts[m]).toFixed(1);}a+=' L'+X(months).toFixed(1)+','+zeroY.toFixed(1)+' Z';svg+='<path d="'+a+'" fill="rgba(18,179,147,.16)"/>';svg+='<text x="'+X((be+months)/2).toFixed(1)+'" y="'+(zeroY-9).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e" opacity="0.9">money in your pocket</text>';}
    svg+='<line x1="'+padL+'" y1="'+zeroY.toFixed(1)+'" x2="'+(w-padR)+'" y2="'+zeroY.toFixed(1)+'" stroke="#cbd5e1" stroke-dasharray="3 3"/>';
    svg+='<text x="'+(padL-6)+'" y="'+(zeroY+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="#8a8f9c">$0</text>';
    var d='M'+X(0)+','+Y(pts[0]).toFixed(1);for(var m=1;m<=months;m++){d+=' L'+X(m).toFixed(1)+','+Y(pts[m]).toFixed(1);}
    svg+='<path d="'+d+'" fill="none" stroke="#0b0c10" stroke-width="2.5" stroke-linejoin="round"/>';
-   if(be!==null&&be<=months){svg+='<line x1="'+X(be).toFixed(1)+'" y1="'+padT+'" x2="'+X(be).toFixed(1)+'" y2="'+(h-padB)+'" stroke="#12b393" stroke-width="1.5" stroke-dasharray="4 4"/><text x="'+X(be).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#0f766e">Paid off: '+be.toFixed(1)+' mo</text>';}
+   if(be!==null&&be<=months){svg+='<line x1="'+X(be).toFixed(1)+'" y1="'+padT+'" x2="'+X(be).toFixed(1)+'" y2="'+(h-padB)+'" stroke="#12b393" stroke-width="1.5" stroke-dasharray="4 4"/><text x="'+X(be).toFixed(1)+'" y="'+(padT+11)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#0f766e">paid for itself: '+be.toFixed(1)+' mo</text>';}
    [0,6,12,18,24].forEach(function(m){svg+='<text x="'+X(m).toFixed(1)+'" y="'+(h-8)+'" text-anchor="middle" font-size="11" fill="#8a8f9c">'+m+'</text>';});
    svg+='<text x="'+X(0)+'" y="'+(Y(pts[0])+15).toFixed(1)+'" font-size="11" font-weight="700" fill="#ef4444">'+money(pts[0])+'</text>';
    svg+='<text x="'+(w-padR)+'" y="'+(Y(pts[months])-8).toFixed(1)+'" text-anchor="end" font-size="12" font-weight="800" fill="#0f766e">'+money(pts[months])+'</text>';
@@ -420,7 +420,7 @@ window.ROI=(function(){
    $('outY1').textContent=money(net*12-price);$('outY2').textContent=money(net*24-price);
    var pp=Math.max(net,0)/rev*100,cp=cost/rev*100,fp=fee/rev*100;
    $('roiFlow').innerHTML='<div class="fc" style="width:'+cp.toFixed(1)+'%">'+Math.round(cp)+'%</div><div class="ff" style="width:'+fp.toFixed(1)+'%"></div><div class="fp" style="width:'+pp.toFixed(1)+'%">'+Math.round(pp)+'%</div>';
-   $('flowSub').textContent='Monthly revenue '+money(rev)+' — split into product cost, fees & data, and your profit.';
+   $('flowSub').textContent='Out of the '+money(rev)+' this machine brings in a month, here is where every dollar goes.';
    drawChart(price,net);
  }
  return {calc:calc};

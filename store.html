@@ -12,8 +12,11 @@ header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);backgroun
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
 .brand img{height:38px}.brand b{color:var(--blue)}
-.nav-r{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:600;color:var(--muted)}
-.nav-r a:hover{color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:18px}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:4px;align-items:center}
+.nav-burger svg{width:26px;height:26px}
 .nav-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:100px;font-weight:700}
 .sec{padding:56px 0}
 .eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
@@ -81,7 +84,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 46px;text-align:center;co
 .step .n{font-weight:700;color:var(--teal)}.step b{display:block;margin:2px 0 3px}.step span{color:var(--muted);font-size:.94rem}
 .lb{position:fixed;inset:0;z-index:200;background:rgba(8,10,14,.94);display:none;align-items:center;justify-content:center;padding:28px}
 .lb.open{display:flex}.lb img{max-width:94%;max-height:92%;border-radius:12px}.lb .x{position:absolute;top:14px;right:28px;color:#fff;font-size:2.8rem;cursor:pointer;font-family:Arial}
-@media(max-width:900px){.pgrid{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.dp{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.nav-r a:not(.nav-cta){display:none}.gal-main{height:340px}}
+@media(max-width:900px){.pgrid{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.dp{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.nav-burger{display:flex}.nav-links{position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 12px 26px rgba(0,0,0,.1);padding:6px 24px 14px;display:none}.nav-links.open{display:flex}.nav-links a{padding:13px 2px;border-bottom:1px solid var(--line);font-size:1rem}.nav-links a:last-child{border-bottom:0}.gal-main{height:340px}}
 button.btn{font-family:inherit;cursor:pointer}
 /* cart */
 .cart-btn{position:relative;display:inline-flex;align-items:center;gap:7px;background:var(--ink);border:0;font-family:inherit;font-size:.9rem;font-weight:700;color:#fff;cursor:pointer;padding:9px 16px;border-radius:100px}
@@ -236,8 +239,11 @@ button.btn{font-family:inherit;cursor:pointer}
 .finnote svg{width:12px;height:12px;vertical-align:-2px;margin-right:3px}
 </style></head><body><header class="nav"><div class="wrap nav-in">
   <a href="store.html" class="brand"><span>Grab<b>nGo</b> Supply Co.</span></a>
-  <nav class="nav-r"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="roi.html">ROI</a><a href="contact.html">Contact us</a>
-    <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button></nav>
+  <div class="nav-r">
+    <div class="nav-links" id="navLinks"><a href="store.html">All machines</a><a href="index.html">Host a machine</a><a href="roi.html">ROI</a><a href="contact.html">Contact us</a></div>
+    <button class="cart-btn" onclick="Cart.open()">&#128722; Cart <span class="cart-count empty" id="cartCount">0</span></button>
+    <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
 </div></header>
 <section class="wrap hero">
   <h1>AI vending machines,<br><span>from people who actually run them.</span></h1>

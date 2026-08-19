@@ -385,6 +385,7 @@ button.btn{font-family:inherit;cursor:pointer}
 <script>
 window.Cart=(function(){
  var K='gng_cart_v1';
+ var CHECKOUT='https://grabngo-supply.matthewgomez1098.workers.dev';
  function load(){try{return JSON.parse(localStorage.getItem(K))||{};}catch(e){return {};}}
  function save(c){localStorage.setItem(K,JSON.stringify(c));}
  function money(n){return '$'+n.toLocaleString('en-US');}
@@ -407,7 +408,7 @@ window.Cart=(function(){
    var se=document.getElementById('cartSub');if(se){se.textContent=money(sub);}
    var note=document.getElementById('cartNote'),co=document.getElementById('cartCo');
    if(note&&co){
-     if(keys.length>=2){note.innerHTML='Ordering more than one model? We send one combined invoice for your whole order.';co.textContent='Request combined invoice →';co.disabled=false;}
+     if(keys.length>=2){note.innerHTML='One secure checkout for your whole cart — pay with card, Affirm, or Klarna.';co.textContent='Checkout →';co.disabled=false;}
      else if(keys.length===1){note.innerHTML='Secure checkout by Stripe · tax &amp; freight calculated after.';co.textContent='Checkout →';co.disabled=false;}
      else{note.innerHTML='Financing available · tax &amp; freight calculated after.';co.textContent='Checkout →';co.disabled=true;}
    }
@@ -425,10 +426,13 @@ window.Cart=(function(){
   open:function(){document.getElementById('cartOv').classList.add('open');document.getElementById('cartDr').classList.add('open');document.body.style.overflow='hidden';render();},
   close:function(){document.getElementById('cartOv').classList.remove('open');document.getElementById('cartDr').classList.remove('open');document.body.style.overflow='';},
   checkout:function(){var c=load(),keys=Object.keys(c);if(!keys.length){return;}
-    if(keys.length===1){window.location.href=c[keys[0]].pay;return;}
-    var sub=0,lines=keys.map(function(k){var it=c[k];sub+=it.price*it.qty;return '- '+it.name+' ('+it.model+') x'+it.qty+' at '+it.disp+' each';});
-    var body='Hi GrabnGo,%0D%0A%0D%0AI would like to order the following machines:%0D%0A%0D%0A'+lines.join('%0D%0A')+'%0D%0A%0D%0AEstimated subtotal: $'+sub.toLocaleString('en-US')+'%0D%0A%0D%0AName:%0D%0AShipping city:%0D%0APhone:%0D%0A';
-    window.location.href='mailto:grabngosupply@gmail.com?subject=Order%20request%20-%20multiple%20machines&body='+body;},
+    if(keys.length===1&&c[keys[0]].qty===1){window.location.href=c[keys[0]].pay;return;}
+    var items=keys.map(function(k){var it=c[k];return {name:it.name+' ('+it.model+')',price:it.price,qty:it.qty};});
+    var co=document.getElementById('cartCo'),old=co.textContent;co.textContent='Starting checkout…';co.disabled=true;
+    fetch(CHECKOUT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:items})})
+      .then(function(r){return r.json();})
+      .then(function(d){if(d&&d.url){window.location.href=d.url;}else{alert('Sorry, checkout could not start: '+((d&&d.error)||'please try again.'));co.textContent=old;co.disabled=false;}})
+      .catch(function(){alert('Could not reach checkout right now. Please try again in a moment.');co.textContent=old;co.disabled=false;});},
   _r:render
  };
 })();
